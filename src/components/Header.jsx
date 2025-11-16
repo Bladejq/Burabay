@@ -20,13 +20,12 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-gray-800 text-white p-4 flex items-center justify-between relative">
+    <header className="w-full bg-gray-800 text-white p-4 flex items-center justify-between relative z-999">
       <h1 className="text-xl font-bold">{t("headerTitle")}</h1>
 
       {/* Десктопное меню */}
       <nav className="hidden md:flex gap-6 items-center text-lg">
         <a href="/" className="hover:text-blue-300">{t("home")}</a>
-        <a href="/control" className="hover:text-blue-300">{t("control")}</a>
 
         {/* Языковой селектор */}
         <div className="relative">
@@ -71,7 +70,6 @@ export default function Header() {
       {openMenu && (
         <div className="absolute top-16 right-4 bg-gray-900 text-white rounded-xl p-4 flex flex-col gap-4 shadow-xl md:hidden">
           <a onClick={() => setOpenMenu(false)} href="/">{t("home")}</a>
-          <a onClick={() => setOpenMenu(false)} href="/control">{t("control")}</a>
 
           <div className="flex flex-col gap-2 mt-2">
             {languages.map(lang => (
